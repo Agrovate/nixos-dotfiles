@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.bash = {
-    enable = true;
+    enable = false;
     shellAliases = {
       btw = "echo I use nixos, btw";
     };
