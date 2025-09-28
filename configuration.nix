@@ -27,10 +27,20 @@
 
   services.displayManager.ly.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
+
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   users.users.nishant = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "podman" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
