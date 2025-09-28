@@ -11,6 +11,7 @@
       ls = "eza";
       la = "eza -la";
       cd = "z";
+      buildenv = "nix develop -c zsh -i";
     };
     initContent = ''
       eval "$(starship init zsh)"
