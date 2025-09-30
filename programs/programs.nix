@@ -19,6 +19,7 @@ in
     starship
     eww
     gh
+    zellij
     inputs.zen-browser.packages."${system}".default
   ];
 }
