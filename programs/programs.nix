@@ -20,6 +20,7 @@ in
     eww
     gh
     zellij
+    lua-language-server
     inputs.zen-browser.packages."${system}".default
   ];
 }

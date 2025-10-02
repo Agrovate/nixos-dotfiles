@@ -151,7 +151,24 @@ vim.lsp.config['nil_ls'] = {
     }
 }
 
+vim.lsp.config['rust_analyzer'] = {
+    cmd = { 'rust-analyzer' },
+    filetypes = { 'rust' },
+    root_markers = { 'Cargo.toml', '.git' },
+    capabilities = caps,
+    settings = {
+        ['rust-analyzer'] = {
+            check = {
+                command = "clippy", -- Use clippy for better linting
+            },
+            inlayHints = {
+                enable = true,
+            },
+        }
+    }
+}
 
+vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('luals')
 vim.lsp.enable('cssls')
 vim.lsp.enable('ts_ls')
