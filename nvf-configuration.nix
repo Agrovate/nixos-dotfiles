@@ -1,9 +1,15 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
-  vim.theme.enable = true;
-  vim.theme.name = "gruvbox";
-  vim.theme.style = "dark";
+  vim = {
+    theme = {
+      enable = "true";
+      name = "gruvbox";
+      style = "dark";
 
-  vim.languages.nix.enable = true;
+
+      languages.nix.enable = true;
+    };
+  };
+
 }
