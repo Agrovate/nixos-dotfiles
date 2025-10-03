@@ -1,7 +1,5 @@
 {
   "nodes": {
-<<<<<<< HEAD
-=======
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -164,7 +162,6 @@
         "type": "github"
       }
     },
->>>>>>> nixvim
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -207,8 +204,6 @@
         "type": "github"
       }
     },
-<<<<<<< HEAD
-=======
     "ixx": {
       "inputs": {
         "flake-utils": [
@@ -279,7 +274,6 @@
         "type": "github"
       }
     },
->>>>>>> nixvim
     "nixpkgs": {
       "locked": {
         "lastModified": 1759281824,
@@ -295,8 +289,6 @@
         "type": "indirect"
       }
     },
-<<<<<<< HEAD
-=======
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -307,11 +299,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1759517635,
-        "narHash": "sha256-fJROsoYvvhIdfsf7vDJYKrGO6QG1QqvuUjCpHKnLRSI=",
+        "lastModified": 1759523389,
+        "narHash": "sha256-nLh1j9K0QhKK10jEhOqJ3e19hiMlrLVS/LICLA4ssNE=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "4c99ccfe1e7b9aed5c3444a634eb3794b0c54742",
+        "rev": "b9c5a75cc63a351b5d92a8af5e72841fba0ee383",
         "type": "github"
       },
       "original": {
@@ -343,17 +335,11 @@
         "type": "github"
       }
     },
->>>>>>> nixvim
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs",
-<<<<<<< HEAD
-        "zen-browser": "zen-browser"
-      }
-    },
-=======
         "nixvim": "nixvim",
         "zen-browser": "zen-browser"
       }
@@ -409,7 +395,6 @@
         "type": "github"
       }
     },
->>>>>>> nixvim
     "zen-browser": {
       "inputs": {
         "home-manager": "home-manager_2",
