@@ -1,3 +1,11 @@
+vim.lsp.enable('luals')
+vim.lsp.enable('cssls')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('phpls')
+vim.lsp.enable('nil_ls')
+vim.lsp.enable('rust_analyzer')
+
+
 vim.lsp.config('*', {
     root_markers = { '.git' },
 })
@@ -167,10 +175,3 @@ vim.lsp.config['rust_analyzer'] = {
         }
     }
 }
-
-vim.lsp.enable('rust_analyzer')
-vim.lsp.enable('luals')
-vim.lsp.enable('cssls')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('phpls')
-vim.lsp.enable('nil_ls')
