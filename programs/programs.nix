@@ -5,7 +5,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    neovim
     ripgrep
     nil
     nixpkgs-fmt
@@ -21,6 +20,8 @@ in
     gh
     zellij
     lua-language-server
+    dockerfile-language-server-nodejs
+    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${system}".default
   ];
 }

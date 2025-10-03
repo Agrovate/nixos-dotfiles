@@ -24,7 +24,11 @@ in
     ./programs/zsh.nix
     ./programs/tmux.nix
     ./programs/programs.nix
+    inputs.nixvim.homeModules.nixvim
   ];
+
+  #programs.nixvim.enable = true;
+
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
