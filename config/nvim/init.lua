@@ -3,9 +3,22 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+vim.opt.expandtab = true
 vim.opt.cursorline = true
 vim.opt.winborder = "rounded"
 vim.opt.smartindent = true
+vim.opt.guicursor = ""
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.wrap = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.opt.updatetime = 50
+vim.opt.colorcolumn = "80"
 
 vim.opt.packpath:prepend(vim.fn.stdpath('data') .. '/site')
 vim.pack.add({
@@ -29,7 +42,7 @@ vim.pack.add({
 
 require("oil").setup({
     keymaps = {
-				["<leader>cd"] = { "actions.parent", mode = "n" },
+				[".."] = { "actions.parent", mode = "n" },
     }
 })
 
@@ -59,6 +72,9 @@ require('nvim-treesitter.configs').setup({
 })
 
 
+
+
+-- LSP!!!!
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
@@ -68,28 +84,8 @@ require("mason-tool-installer").setup({
 	}
 })
 
-vim.lsp.config("lua_ls", {
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				globals = {
-					"vim",
-					"require",
-				},
-			},
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			telemetry = {
-				enable = false,
-			},
-		},
-	},
-})
-
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('rust_analyzer')
 require("luasnip.loaders.from_vscode").lazy_load()
 require("blink.cmp").setup({
 	signature = { enabled = true },
@@ -105,9 +101,11 @@ require("blink.cmp").setup({
 	},
 })
 
-
 -- Custom Keybinds
 vim.keymap.set('v', '<leader>y', '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<leader>cd", "<Cmd>Oil<CR>")
 
 
 
