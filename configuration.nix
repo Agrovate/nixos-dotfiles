@@ -6,6 +6,11 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  nixpkgs.config.allowUnfree = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  users.extraGroups.vboxusers.members = ["nishant"];
+  services.openssh.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -60,7 +65,7 @@
     wget
     git
     ghostty
-    neofetch
+    fastfetch
     light
     krusader
     podman

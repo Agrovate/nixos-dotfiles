@@ -38,16 +38,12 @@ vim.pack.add({
 		{src = "https://github.com/nvim-lua/plenary.nvim"},
 		{src = "https://github.com/nvim-telescope/telescope.nvim"},
 		{src = "https://github.com/stevearc/oil.nvim"},
+		{src = "https://github.com/mrcjkb/rustaceanvim"},
 })
 
-require("oil").setup({
-    keymaps = {
-				[".."] = { "actions.parent", mode = "n" },
-    }
-})
+require("oil").setup()
 
---THEMES!!!!
-vim.cmd('colorscheme gruvbox')
+vim.cmd("colorscheme gruvbox")
 require("lualine").setup({
 		options = {
 				theme = 'auto'
@@ -80,7 +76,6 @@ require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
 	ensure_installed = {
 		"lua_ls",
-		"stylua",
 	}
 })
 
@@ -89,6 +84,7 @@ vim.lsp.enable('rust_analyzer')
 require("luasnip.loaders.from_vscode").lazy_load()
 require("blink.cmp").setup({
 	signature = { enabled = true },
+  build = 'cargo build --release',
 	completion = {
 		documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		menu = {
@@ -100,6 +96,20 @@ require("blink.cmp").setup({
 		},
 	},
 })
+vim.g.rustaceanvim = {
+      ['rust-analyzer'] = {
+        cargo = {
+                allFeatures = true,
+      },
+   },
+}
+
+local bufnr = vim.api.nvim_get_current_buf()
+vim.keymap.set("n","<leader>b",function() vim.cmd.RustLsp('codeAction') end, {silent = true, buffer = bufnr})
+
+vim.keymap.set("n","<leader>K",function() vim.cmd.RustLsp({'hover', 'actions'}) end, {silent = true, buffer = bufnr})
+
+
 
 -- Custom Keybinds
 vim.keymap.set('v', '<leader>y', '"+y', { desc = "Yank to system clipboard" })

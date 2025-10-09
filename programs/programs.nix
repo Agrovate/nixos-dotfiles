@@ -20,7 +20,7 @@ in
     gh
     zellij
     lua-language-server
-    dockerfile-language-server-nodejs
+    rust-analyzer
     inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${system}".default
   ];
