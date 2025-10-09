@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, nixvim, ... }:
+{ config, pkgs, inputs,... }:
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -24,7 +24,7 @@ in
     ./programs/zsh.nix
     ./programs/tmux.nix
     ./programs/programs.nix
-    inputs.nixvim.homeModules.nixvim
+    ./programs/nushell.nix
   ];
 
   #programs.nixvim.enable = true;
