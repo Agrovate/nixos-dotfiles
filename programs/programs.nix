@@ -19,8 +19,12 @@ in
     eww
     gh
     zellij
+    sioyek
+    obsidian
+
     lua-language-server
     rust-analyzer
+
     inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${system}".default
   ];
