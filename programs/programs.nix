@@ -21,9 +21,17 @@ in
     zellij
     sioyek
     obsidian
+    maven
+    ant
+    viu
+    unzip
+    slurp
+    grim
+    wl-clipboard
 
     lua-language-server
     rust-analyzer
+    rocmPackages.llvm.clang-unwrapped
 
     inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${system}".default
