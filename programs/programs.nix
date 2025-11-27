@@ -28,6 +28,7 @@ in
     slurp
     grim
     wl-clipboard
+    alsa-utils
 
     lua-language-server
     rust-analyzer

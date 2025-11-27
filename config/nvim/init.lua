@@ -39,6 +39,7 @@ vim.pack.add({
 		{src = "https://github.com/nvim-telescope/telescope.nvim"},
 		{src = "https://github.com/stevearc/oil.nvim"},
 		{src = "https://github.com/mrcjkb/rustaceanvim"},
+		{src = "https://github.com/kawre/leetcode.nvim"},
 })
 
 require("oil").setup()
@@ -49,8 +50,6 @@ require("lualine").setup({
 				theme = 'auto'
 		}
 })
-
-
 
 require('nvim-treesitter.configs').setup({
 		ensure_installed = { "c", "lua", "vim", "markdown", "rust" },
@@ -76,11 +75,13 @@ require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
 	ensure_installed = {
 		"lua_ls",
+    "pyright",
 	}
 })
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('pyright')
 require("luasnip.loaders.from_vscode").lazy_load()
 require("blink.cmp").setup({
 	signature = { enabled = true },
