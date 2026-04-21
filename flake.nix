@@ -45,7 +45,7 @@
 	  home-manager.useUserPackages = true;
 
 	  home-manager.users.snow = {
-        imports = [ ./moddules/home/home.nix ];
+        imports = [ ./modules/home/home.nix ];
 	    home.stateVersion = "25.11";
 	  };
 	}

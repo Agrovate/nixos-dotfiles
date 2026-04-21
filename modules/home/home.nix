@@ -15,17 +15,18 @@
     fzf
   ];
 
+
+  imports = [
+    ./zsh.nix
+    ./git.nix
+    ./direnv.nix
+  ];
+
   programs = {
     home-manager.enable = true;
+    zoxide.enable = true;
+    zoxide.enableZshIntegration = true;
 
-#    git = {
-#      enable = true;
-#      userName = "Your Name";
-#      userEmail = "youremail@example.com";
-#      extraConfig = {
-#        init.defaultBranch = "main";
-#      };
-#    };
 
   # 📂 Managing Dotfiles (Directly mapping files)
   # home.file.".config/my-app/config".text = ''

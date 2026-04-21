@@ -3,7 +3,7 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ../../modules/hyprland.nix
+      ../../modules/nixos/hyprland.nix
     ];
 
 
@@ -50,9 +50,16 @@ menuentry 'Arch Linux (on /dev/nvme0n1p3)' --class arch --class gnu-linux --clas
   programs.zsh.enable = true;
   programs.starship.enable = true;
 
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    enableZshIntegration = true;
+    settings = {
+      global = {
+        hide_env_diff = true;
+      };
+    };
   };
 
    environment.systemPackages = with pkgs; [
@@ -76,15 +83,16 @@ menuentry 'Arch Linux (on /dev/nvme0n1p3)' --class arch --class gnu-linux --clas
     initialPassword = "isha";
     shell = pkgs.zsh;
   };
-  
-  
+
   services.displayManager.ly = {
     enable = true;
     settings = {
       path_session_log = "/home/snow/.local/state/ly-session.log";
     };
   };
-  services.openssh.enable = true;
+  services.openssh = {
+    enable= true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
