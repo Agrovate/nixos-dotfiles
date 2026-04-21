@@ -1,13 +1,8 @@
-{config, pkgs, ...}:
+{config, pkgs, inputs, ... }:
 {
-  programs.hyprland.enable = true;
-  environment.systemPackages = with pkgs; [
-    waybar
-    wofi
-    kitty
-    hyprpaper
-  ];
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 }
