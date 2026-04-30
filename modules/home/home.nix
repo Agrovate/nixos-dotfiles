@@ -13,6 +13,10 @@
     zip
     ripgrep
     fzf
+    nixd
+    nil
+    tree
+    gh
   ];
 
 

@@ -84,12 +84,26 @@ menuentry 'Arch Linux (on /dev/nvme0n1p3)' --class arch --class gnu-linux --clas
     shell = pkgs.zsh;
   };
 
-  services.displayManager.ly = {
+  services.greetd = {
     enable = true;
     settings = {
-      path_session_log = "/home/snow/.local/state/ly-session.log";
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'uwsm start hyprland-uwsm.desktop'";
+        user = "greeter";
+      };
     };
   };
+  # optional below
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "null"; # no tty spam
+    StandardError = "journal";
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
+  };
+
   services.openssh = {
     enable= true;
   };
