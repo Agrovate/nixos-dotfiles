@@ -88,6 +88,13 @@
             shell = pkgs.zsh;
         };
 
+        home-manager.users.snow = {
+          home.username = "snow";
+          home.homeDirectory = "/home/snow";
+          home.stateVersion = "25.11";
+          programs.home-manager.enable = true;
+        };
+
         services.greetd = {
             enable = true;
             settings = {
