@@ -3,7 +3,6 @@
         imports = [
             self.nixosModules.myMachineHardware
             self.nixosModules.niri
-            inputs.home-manager.nixosModules.home-manager
         ];
 
 
@@ -79,6 +78,7 @@
             zoxide
             eza
             gcc
+            home-manager
         ];
 
         users.users.snow = {
