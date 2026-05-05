@@ -23,6 +23,16 @@
                     "Mod+Q".close-window = _: {};
                     "Mod+E".quit = _: {};
                     "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+
+                    "Mod+H".focus-column-left = _: {};
+                    "Mod+L".focus-column-right = _: {};
+                    "Mod+K".focus-window-or-workspace-up = _: {};
+                    "Mod+J".focus-window-or-workspace-down = _: {};
+
+                    "Mod+Shift+H".move-column-left = _: {};
+                    "Mod+Shift+L".move-column-right = _: {};
+                    "Mod+Shift+K".move-column-to-workspace-up = _: {};
+                    "Mod+Shift+J".move-column-to-workspace-down = _: {};
                 };
             };
         };
