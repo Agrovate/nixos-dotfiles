@@ -6,5 +6,6 @@
             "aarch64-darwin"
         ];
     imports = [
+        inputs.ez-configs.flakeModule
     ];
 }

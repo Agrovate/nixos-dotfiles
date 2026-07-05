@@ -13,6 +13,7 @@
     zip
     ripgrep
     fzf
+    bat
   ];
 
 
@@ -20,6 +21,7 @@
     ./zsh.nix
     ./git.nix
     ./direnv.nix
+        #    ./tmux.nix
   ];
 
   programs = {

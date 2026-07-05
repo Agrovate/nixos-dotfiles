@@ -19,6 +19,7 @@
                 layout.gaps = 5;
 
                 binds = {
+                    "Mod+Shift+F".fullscreen-window = _: {};
                     "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
                     "Mod+Q".close-window = _: {};
                     "Mod+E".quit = _: {};
@@ -33,6 +34,8 @@
                     "Mod+Shift+L".move-column-right = _: {};
                     "Mod+Shift+K".move-column-to-workspace-up = _: {};
                     "Mod+Shift+J".move-column-to-workspace-down = _: {};
+                    "Mod+Shift+F3".spawn-sh = "${lib.getExe pkgs.grim} -g \"$(${lib.getExe pkgs.slurp})\" \"$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png\"";
+                    "Mod+Shift+Slash".show-hotkey-overlay = _: {};
                 };
             };
         };

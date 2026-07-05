@@ -530,7 +530,7 @@
     },
     "colorSchemes": {
       "useWallpaperColors": false,
-      "predefinedScheme": "Gruvbox",
+      "predefinedScheme": "Nord",
       "darkMode": true,
       "schedulingMode": "off",
       "manualSunrise": "06:30",
