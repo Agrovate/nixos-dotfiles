@@ -21,7 +21,6 @@
     ./zsh.nix
     ./git.nix
     ./direnv.nix
-        #    ./tmux.nix
   ];
 
   programs = {
