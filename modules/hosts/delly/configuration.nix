@@ -89,7 +89,6 @@
             zoxide
             eza
             gcc
-            home-manager
         ];
 
         users.users.snow = {
@@ -98,6 +97,7 @@
             initialPassword = "isha";
             shell = pkgs.zsh;
         };
+        home-manager.users.snow = self.homeModules.snowModule;
 
         services.greetd = {
             enable = true;
