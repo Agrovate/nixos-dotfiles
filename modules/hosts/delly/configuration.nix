@@ -4,6 +4,7 @@
             self.nixosModules.myMachineHardware
             self.nixosModules.niri
             self.nixosModules.tmux
+            self.nixosModules.git
         ];
 
 
@@ -79,7 +80,6 @@
         environment.systemPackages = with pkgs; [
             vim
             wget
-            git
             neovim
             ghostty
             wl-clipboard

@@ -26,7 +26,6 @@
 
     imports = [
       ../../../home-manager/zsh.nix
-      ../../../home-manager/git.nix
       ../../../home-manager/direnv.nix
     ];
 
