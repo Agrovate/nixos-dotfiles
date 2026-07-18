@@ -91,6 +91,7 @@
             gcc
             man-pages
             man-pages-posix
+            inputs.zen-browser.packages.x86_64-linux.default
         ];
 
         documentation.dev.enable = true;
