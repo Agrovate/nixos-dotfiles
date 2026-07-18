@@ -89,7 +89,11 @@
             zoxide
             eza
             gcc
+            man-pages
+            man-pages-posix
         ];
+
+        documentation.dev.enable = true;
 
         users.users.snow = {
             isNormalUser = true;
