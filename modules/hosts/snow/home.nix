@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.homeConfigurations.USERNAME = inputs.home-manager.lib.homeManagerConfiguration {
+  flake.homeConfigurations.snow = inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
     modules = [
       self.homeModules.snowModule

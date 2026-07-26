@@ -58,6 +58,17 @@
                         default-column-width =  { proportion = 0.25;};
                         default-window-height =  { fixed = 225;};
                     }
+                    {
+                        matches = [
+                            {
+                                app-id = "zen";
+                                title = "^Picture-in-Picture$";
+                            }
+                        ];
+                        open-floating = true;
+                        default-column-width =  { proportion = 0.25;};
+                        default-window-height =  { fixed = 225;};
+                    }
                 ];
             };
         };

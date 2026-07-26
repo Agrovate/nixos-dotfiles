@@ -1,5 +1,5 @@
 {self, inputs, ...}: {
-    flake.nixosConfigurations.delly = inputs.nixpkgs.lib.nixosSystem {
+    flake.nixosConfigurations.snow = inputs.nixpkgs.lib.nixosSystem {
         modules = [
             self.nixosModules.myMachineConfiguration
             self.nixosModules.myHomeManager

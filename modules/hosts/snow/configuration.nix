@@ -39,6 +39,10 @@
 
 
         networking.networkmanager.enable = true;
+        networking.networkmanager.settings = {
+            main.hostname-mode = "none";
+        };
+        networking.hostName = "snow";
 
         time.timeZone = "Asia/Kolkata";
 
@@ -92,7 +96,11 @@
             man-pages
             man-pages-posix
             inputs.zen-browser.packages.x86_64-linux.default
+            obsidian
+            sqlite
         ];
+
+        nixpkgs.config.allowUnfree = true;
 
         documentation.dev.enable = true;
 
@@ -126,6 +134,20 @@
         services.openssh = {
             enable= true;
         };
+
+        services.syncthing = {
+            enable = true;
+            openDefaultPorts = true;
+            guiAddress = "0.0.0.0:8384";
+            settings = {
+                gui = {
+                    user = "snow";
+                    password = "isha";
+                };
+            };
+        };
+
+        networking.firewall.allowedTCPPorts = [ 8384 8080 8000 80];
 
         nix.settings.experimental-features = ["nix-command" "flakes" ];
         system.stateVersion = "25.11";
