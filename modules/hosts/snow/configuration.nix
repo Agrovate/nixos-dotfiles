@@ -68,6 +68,7 @@
         programs.firefox.enable = true;
         programs.zsh.enable = true;
         programs.starship.enable = true;
+        programs.nix-ld.enable = true;
 
 
         programs.direnv = {
@@ -97,7 +98,6 @@
             man-pages-posix
             inputs.zen-browser.packages.x86_64-linux.default
             obsidian
-            sqlite
         ];
 
         nixpkgs.config.allowUnfree = true;
