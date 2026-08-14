@@ -1,10 +1,11 @@
 {self, inputs, ...}: {
     flake.nixosModules.myMachineConfiguration = {pkgs, lib, ...}: {
-        imports = [
-            self.nixosModules.myMachineHardware
-            self.nixosModules.niri
-            self.nixosModules.tmux
-            self.nixosModules.git
+        imports = with self.nixosModules; [
+            myMachineHardware
+            niri
+            tmux
+            git
+            zsh
         ];
 
 
@@ -83,21 +84,30 @@
         };
 
         environment.systemPackages = with pkgs; [
-            vim
-            wget
-            neovim
             ghostty
+            alacritty
+
+            vim
+            neovim
+            claude-code
+            obsidian
+
+            wget
             wl-clipboard
             stow
+
             hyprpaper
             tofi
             zoxide
             eza
+
             gcc
             man-pages
             man-pages-posix
+
             inputs.zen-browser.packages.x86_64-linux.default
-            obsidian
+            inputs.swiss.packages.x86_64-linux.default
+            nautilus
         ];
 
         nixpkgs.config.allowUnfree = true;
@@ -107,8 +117,7 @@
         users.users.snow = {
             isNormalUser = true;
             extraGroups = [ "wheel" ];
-            initialPassword = "isha";
-            shell = pkgs.zsh;
+            #           shell = pkgs.zsh;
         };
         home-manager.users.snow = self.homeModules.snowModule;
 

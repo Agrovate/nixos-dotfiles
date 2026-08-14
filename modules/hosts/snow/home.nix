@@ -21,12 +21,15 @@
       ripgrep
       fzf
       bat
+      gh
+      viu
+      yazi
     ];
 
 
     imports = [
-      ../../../home-manager/zsh.nix
       ../../../home-manager/direnv.nix
+      ../../../home-manager/yazi.nix
     ];
 
     programs = {

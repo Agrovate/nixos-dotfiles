@@ -17,6 +17,8 @@
                     xkb.options = "ctrl:swapcaps";
                 };
                 layout.gaps = 5;
+                layout.border = {off = {};};
+                layout.focus-ring = {off = {};};
 
                 binds = {
                     "Mod+F".maximize-column = _: {};
@@ -57,6 +59,9 @@
                         open-floating = true;
                         default-column-width =  { proportion = 0.25;};
                         default-window-height =  { fixed = 225;};
+
+                        geometry-corner-radius = 12;
+                        clip-to-geometry = true;
                     }
                     {
                         matches = [

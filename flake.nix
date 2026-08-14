@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    swiss = {
+      url = "github:Agrovate/swiss";
+    };
+
+
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

@@ -142,6 +142,22 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1786599213,
+        "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1775579569,
         "narHash": "sha256-/m3yyS/EnXqoPGBJYVy4jTOsirdgsEZ3JdN2gGkBr14=",
         "owner": "NixOS",
@@ -163,13 +179,32 @@
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs_2",
+        "swiss": "swiss",
         "wrapper-modules": "wrapper-modules",
         "zen-browser": "zen-browser"
       }
     },
-    "wrapper-modules": {
+    "swiss": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1786733081,
+        "narHash": "sha256-lDgvSDzNMbqu3S7FJ/kDK6lXafZr+xQvsjtYNDhFfdg=",
+        "owner": "Agrovate",
+        "repo": "swiss",
+        "rev": "9840afbdc41b23114b6c70eb249c5029c84e9f23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Agrovate",
+        "repo": "swiss",
+        "type": "github"
+      }
+    },
+    "wrapper-modules": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1777576922,
