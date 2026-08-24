@@ -24,6 +24,9 @@
     swiss = {
       url = "github:Agrovate/swiss";
     };
+    project-maxxer = {
+      url = "github:Agrovate/project-maxxer";
+    };
 
 
   };

@@ -75,6 +75,7 @@
         programs.direnv = {
             enable = true;
             nix-direnv.enable = true;
+            silent = true;
             enableZshIntegration = true;
             settings = {
                 global = {
@@ -107,6 +108,7 @@
 
             inputs.zen-browser.packages.x86_64-linux.default
             inputs.swiss.packages.x86_64-linux.default
+            inputs.project-maxxer.packages.x86_64-linux.default
             nautilus
         ];
 
