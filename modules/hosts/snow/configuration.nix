@@ -6,6 +6,7 @@
             tmux
             git
             zsh
+            quickshell
         ];
 
 

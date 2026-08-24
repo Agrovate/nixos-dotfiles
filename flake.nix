@@ -27,8 +27,10 @@
     project-maxxer = {
       url = "github:Agrovate/project-maxxer";
     };
-
-
+    quickshell = {
+      url = "git+file:///home/snow/Projects/quickshell";
+      flake = false;
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake
