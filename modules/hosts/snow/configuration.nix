@@ -88,6 +88,7 @@
             ghostty
             alacritty
 
+            devenv
             vim
             neovim
             claude-code
@@ -109,6 +110,7 @@
             inputs.zen-browser.packages.x86_64-linux.default
             inputs.swiss.packages.x86_64-linux.default
             inputs.project-maxxer.packages.x86_64-linux.default
+
             nautilus
         ];
 
