@@ -88,6 +88,7 @@
         environment.systemPackages = with pkgs; [
             ghostty
             alacritty
+            quickshell
 
             devenv
             vim
@@ -114,6 +115,14 @@
 
             nautilus
         ];
+
+        fonts.packages = with pkgs; [
+          nerd-fonts.iosevka
+          nerd-fonts.jetbrains-mono
+          nerd-fonts.meslo-lg
+          material-symbols
+        ];
+
 
         nixpkgs.config.allowUnfree = true;
 

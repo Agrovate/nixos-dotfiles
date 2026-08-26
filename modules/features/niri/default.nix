@@ -10,7 +10,9 @@
             inherit pkgs;
             settings = {
                 spawn-at-startup = [
-                    (lib.getExe self'.packages.myNoctalia)
+                    #(lib.getExe self'.packages.myNoctalia)
+                     (lib.getExe self'.packages.myBar)
+
                 ];
                 input.keyboard = {
                     xkb.layout = "us, ua";
@@ -26,7 +28,8 @@
                     "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
                     "Mod+Q".close-window = _: {};
                     "Mod+E".quit = _: {};
-                    "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+                    #"Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+                    "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myBar} ipc call launcher toggle";
                     "Mod+Shift+V".toggle-window-floating = _: {};
                     "Mod+V".switch-focus-between-floating-and-tiling = _: {};
                     "Mod+1".focus-workspace = 1;
