@@ -1,9 +1,5 @@
 {moduleWithSystem,inputs,...}: {
-  flake.nixosModules.quickshell = moduleWithSystem ({
-    self',
-    pkgs,
-    ...
-  }: {
+  flake.nixosModules.quickshell = moduleWithSystem ({self',pkgs,...}: {
     environment.systemPackages = with self'.packages; [
       myBar
     ];

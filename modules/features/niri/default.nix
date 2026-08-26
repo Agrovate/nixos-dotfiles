@@ -1,18 +1,25 @@
 {self, inputs, ... }: {
    flake.nixosModules.niri = {pkgs, lib, ...}: {
-       programs.niri = {
+        programs.niri = {
            enable = true;
            package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
-       };
+        };
+        services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
    };
-    perSystem= {pkgs,lib,self', ...}: {
+    perSystem = {pkgs,lib,self', ...}: {
         packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
             inherit pkgs;
             settings = {
                 spawn-at-startup = [
                     #(lib.getExe self'.packages.myNoctalia)
                      (lib.getExe self'.packages.myBar)
-
+                    [
+                         (lib.getExe pkgs.swaybg)
+                         "-i"
+                         "/home/snow/Wallpapers/mount_fuji.jpg"
+                         "-m"
+                         "fill"
+                    ]
                 ];
                 input.keyboard = {
                     xkb.layout = "us, ua";
@@ -25,7 +32,7 @@
                 binds = {
                     "Mod+F".maximize-column = _: {};
                     "Mod+Shift+F".fullscreen-window = _: {};
-                    "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
+                    "Mod+Return".spawn-sh = lib.getExe self'.packages.myGhostty;
                     "Mod+Q".close-window = _: {};
                     "Mod+E".quit = _: {};
                     #"Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
