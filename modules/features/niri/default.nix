@@ -49,6 +49,14 @@
                     "Mod+Shift+J".move-column-to-workspace-down = _: {};
                     "Mod+Shift+F3".spawn-sh = "${lib.getExe pkgs.grim} -g \"$(${lib.getExe pkgs.slurp})\" \"$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png\"";
                     "Mod+Shift+Slash".show-hotkey-overlay = _: {};
+
+                    "XF86AudioRaiseVolume".spawn = [ "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "5%+" ];
+                    "XF86AudioLowerVolume".spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
+                    "XF86AudioMute".spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+
+                    "XF86MonBrightnessUp".spawn = [ "brightnessctl" "set" "+5%" ];
+                    "XF86MonBrightnessDown".spawn = [ "brightnessctl" "set" "5%-" ];
+
                 };
 
                 window-rules = [

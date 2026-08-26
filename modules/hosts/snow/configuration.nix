@@ -51,6 +51,8 @@
 
         services.xserver.enable = false;
 
+        services.upower.enable = true;
+
 
         services.pipewire = {
             enable = true;
@@ -99,6 +101,7 @@
             wget
             wl-clipboard
             stow
+            brightnessctl
 
             hyprpaper
             tofi
