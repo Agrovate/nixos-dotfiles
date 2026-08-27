@@ -5,21 +5,15 @@
            package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
         };
         services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+        environment.systemPackages = with pkgs; [ awww ];
    };
     perSystem = {pkgs,lib,self', ...}: {
         packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
             inherit pkgs;
             settings = {
                 spawn-at-startup = [
-                    #(lib.getExe self'.packages.myNoctalia)
-                     (lib.getExe self'.packages.myBar)
-                    [
-                         (lib.getExe pkgs.swaybg)
-                         "-i"
-                         "/home/snow/Wallpapers/mount_fuji.jpg"
-                         "-m"
-                         "fill"
-                    ]
+                    (lib.getExe self'.packages.myBar)
+                    "awww-daemon"
                 ];
                 input.keyboard = {
                     xkb.layout = "us, ua";
@@ -32,13 +26,17 @@
                 binds = {
                     "Mod+F".maximize-column = _: {};
                     "Mod+Shift+F".fullscreen-window = _: {};
+
                     "Mod+Return".spawn-sh = lib.getExe self'.packages.myGhostty;
+
                     "Mod+Q".close-window = _: {};
                     "Mod+E".quit = _: {};
-                    #"Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+
                     "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myBar} ipc call launcher toggle";
+
                     "Mod+Shift+V".toggle-window-floating = _: {};
                     "Mod+V".switch-focus-between-floating-and-tiling = _: {};
+
                     "Mod+1".focus-workspace = 1;
                     "Mod+2".focus-workspace = 2;
                     "Mod+3".focus-workspace = 3;
@@ -54,6 +52,7 @@
                     "Mod+Shift+L".move-column-right = _: {};
                     "Mod+Shift+K".move-column-to-workspace-up = _: {};
                     "Mod+Shift+J".move-column-to-workspace-down = _: {};
+
                     "Mod+Shift+F3".spawn-sh = "${lib.getExe pkgs.grim} -g \"$(${lib.getExe pkgs.slurp})\" \"$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png\"";
                     "Mod+Shift+Slash".show-hotkey-overlay = _: {};
 
@@ -65,6 +64,12 @@
                     "XF86MonBrightnessDown".spawn = [ "brightnessctl" "set" "5%-" ];
 
                 };
+
+                extraConfig = "
+                    hotkey-overlay {
+                        skip-at-startup
+                    }
+                ";
 
                 window-rules = [
                     {

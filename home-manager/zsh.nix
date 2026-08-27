@@ -7,7 +7,8 @@
     shellAliases = {
       cd = "z";
       ls = "eza -l";
-      sysupdate = "sudo nixos-rebuild switch --flake .#snow";
+      sysupdate = "cd /home/snow/nixos-dotfiles/ && sudo nixos-rebuild switch --flake ."
+
     };
     history = {
       size = 10000;

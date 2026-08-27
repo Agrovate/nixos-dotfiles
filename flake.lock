@@ -209,11 +209,11 @@
     "quickshell": {
       "flake": false,
       "locked": {
-        "lastModified": 1787737256,
-        "narHash": "sha256-LvM2xi8tc/kreZMXtTLGjG4dzYiu+LhIuA/5mX80LPI=",
+        "lastModified": 1787784160,
+        "narHash": "sha256-YuuAfc/MLa5WHPXE5nDYk/eLMr375/Wmgkl6rIqdTgk=",
         "ref": "refs/heads/main",
-        "rev": "e77aafcf572139ad3a9e5ec8e025bb2178681c2c",
-        "revCount": 5,
+        "rev": "b56767982b9e2085d93514f146d6a212cc7c8e97",
+        "revCount": 6,
         "type": "git",
         "url": "file:///home/snow/Projects/quickshell"
       },

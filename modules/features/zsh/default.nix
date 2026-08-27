@@ -25,7 +25,7 @@
             zshAliases = {
                 cd = "z";
                 ls = "${lib.getExe pkgs.eza} -l";
-                sysupdate = "sudo nixos-rebuild switch --flake /home/snow/nixos-dotfiles";
+                sysupdate = "sudo nixos-rebuild switch --impure --flake /home/snow/nixos-dotfiles";
             };
             zshrc.content = ''
                 HISTFILE="$HOME/.zsh_history"

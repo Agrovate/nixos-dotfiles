@@ -5,7 +5,9 @@
         enable = true;
         dns = "none";
         settings = {
-          main.hostname-mode = "none";
+          main = {
+            "hostname-mode" = "none";
+          };
         };
       };
       nameservers = [

@@ -1,5 +1,5 @@
 {self, inputs, ...}: {
-    flake.nixosConfigurations.snow = inputs.nixpkgs.lib.nixosSystem {
+    flake.nixosConfigurations.BACKPAIN = inputs.nixpkgs.lib.nixosSystem {
         modules = with self.nixosModules; [
             backpainConfiguration
             myHomeManager
@@ -8,6 +8,7 @@
             gpuIntel
             desktop
             development
+            touchpad
         ];
     };
 }
