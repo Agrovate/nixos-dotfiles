@@ -1,5 +1,5 @@
-{self, inputs, ...}: {
-    flake.nixosModules.sh1t3rsDisk = {pkgs, lib,...}: {
+{self, inputs, pkgs, ...}: {
+    flake.diskoConfigurations.sh1t3rsDisk = {
       disko.devices = {
         disk = {
           main = {
@@ -13,7 +13,7 @@
                   type = "EF02";
                 };
                 ESP = {
-                  size = "1G";
+                  size = "3G";
                   type = "EF00";
                   content = {
                     type = "filesystem";
@@ -28,12 +28,12 @@
                     type = "filesystem";
                     format = "ext4";
                     mountpoint = "/";
-                 };
-               };
-             };
-           };
-         };
+                  };
+                };
+              };
+            };
+          };
+        };
       };
     };
-  };
 }
