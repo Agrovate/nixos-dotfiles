@@ -3,7 +3,6 @@
         system = "x86_64-linux";
         modules = with self.nixosModules; [
             sh1t3rsConfiguration
-            sh1t3rsDisk
             myHomeManager
             cpuAmd
             gpuAmd
