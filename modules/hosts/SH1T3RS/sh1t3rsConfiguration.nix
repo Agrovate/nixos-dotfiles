@@ -10,6 +10,7 @@
 
         environment.systemPackages = with pkgs; [
             alacritty
+	    asusctl
 
             inputs.zen-browser.packages.x86_64-linux.default
             inputs.swiss.packages.x86_64-linux.default

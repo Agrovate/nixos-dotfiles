@@ -231,15 +231,15 @@
       "locked": {
         "lastModified": 1787784160,
         "narHash": "sha256-YuuAfc/MLa5WHPXE5nDYk/eLMr375/Wmgkl6rIqdTgk=",
-        "ref": "refs/heads/main",
+        "owner": "Agrovate",
+        "repo": "quickshell",
         "rev": "b56767982b9e2085d93514f146d6a212cc7c8e97",
-        "revCount": 6,
-        "type": "git",
-        "url": "file:///home/snow/Projects/quickshell"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/snow/Projects/quickshell"
+        "owner": "Agrovate",
+        "repo": "quickshell",
+        "type": "github"
       }
     },
     "root": {

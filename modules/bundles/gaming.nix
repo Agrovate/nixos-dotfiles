@@ -5,7 +5,7 @@
         environment.systemPackages = with pkgs; [
             mangohud
             lutris
-            protonup
+            protonup-ng
         ];
         programs.gamemode.enable = true;
 
