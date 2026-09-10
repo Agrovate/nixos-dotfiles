@@ -1,9 +1,10 @@
 {self, inputs, ...}: {
-    flake.nixosModules.sh1t3rsDisk = {pkgs, lib, ...}: {
+    flake.nixosModules.sh1t3rsDisk = {pkgs, lib,...}: {
       disko.devices = {
         disk = {
           main = {
             type = "disk";
+            device = "/dev/nvme0n1";
             content = {
               type = "gpt";
               partitions = {

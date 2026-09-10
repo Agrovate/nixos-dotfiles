@@ -4,9 +4,6 @@
 
         hardware.graphics = {
             enable = true;
-            extraPackages = with pkgs; [
-                amdvlk
-            ];
         };
 
         environment.sessionVariables = {

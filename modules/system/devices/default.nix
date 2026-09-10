@@ -5,5 +5,6 @@
             upower
             brightness
         ];
+        services.qemuGuest.enable = true;
     };
 }
