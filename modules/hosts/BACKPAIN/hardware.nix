@@ -1,5 +1,5 @@
 {self, inputs, ...}: {
-    flake.nixosModules.myMachineHardware = { config, lib, pkgs, modulesPath, ... }:
+    flake.nixosModules.backpainMachineHardware = { config, lib, pkgs, modulesPath, ... }:
         {
             imports =
                 [

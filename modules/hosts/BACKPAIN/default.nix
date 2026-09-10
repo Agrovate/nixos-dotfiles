@@ -2,8 +2,8 @@
     flake.nixosConfigurations.BACKPAIN = inputs.nixpkgs.lib.nixosSystem {
         modules = with self.nixosModules; [
             backpainConfiguration
+            backpainMachineHardware
             myHomeManager
-            myMachineHardware
             cpuIntel
             gpuIntel
             desktop
