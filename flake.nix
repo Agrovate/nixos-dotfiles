@@ -33,7 +33,7 @@
       url = "github:Agrovate/project-maxxer";
     };
     quickshell = {
-      url = "git+file:///home/snow/Projects/quickshell";
+      url = "github:Agrovate/quickshell";
       flake = false;
     };
   };
