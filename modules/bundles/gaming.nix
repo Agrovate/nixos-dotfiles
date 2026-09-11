@@ -6,6 +6,7 @@
             mangohud
             lutris
             protonup-ng
+	    unrar
         ];
         programs.gamemode.enable = true;
 
