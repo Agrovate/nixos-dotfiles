@@ -1,12 +1,7 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{...}: {
   flake.nixosModules.backpainMachineHardware = {
     config,
     lib,
-    pkgs,
     modulesPath,
     ...
   }: {
