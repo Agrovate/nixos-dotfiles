@@ -30,6 +30,7 @@
   perSystem = {
     pkgs,
     lib,
+    self',
     ...
   }: {
     packages.myZsh = inputs.wrapper-modules.wrappers.zsh.wrap {
@@ -38,6 +39,7 @@
         cd = "z";
         ls = "${lib.getExe pkgs.eza} -l";
         sysupdate = "sudo nixos-rebuild switch --flake /home/snow/nixos-dotfiles";
+        nvim = "${lib.getExe self'.packages.nvim}";
       };
       zshrc.content = ''
         HISTFILE="$HOME/.zsh_history"
