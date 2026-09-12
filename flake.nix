@@ -26,19 +26,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    swiss = {
-      url = "github:Agrovate/swiss";
-    };
-    project-maxxer = {
-      url = "github:Agrovate/project-maxxer";
-    };
+    swiss.url = "github:Agrovate/swiss";
+    project-maxxer.url = "github:Agrovate/project-maxxer";
+    nvim.url = "github:Agrovate/nvim";
+
     quickshell = {
       url = "github:Agrovate/quickshell";
       flake = false;
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake
     {inherit inputs;}
     (inputs.import-tree ./modules);
 }
