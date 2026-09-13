@@ -3,11 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.zsh = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.zsh = {pkgs, ...}: {
     nixpkgs.overlays = [
       (final: prev: {
         zsh = self.packages.${pkgs.stdenv.hostPlatform.system}.myZsh;
@@ -39,11 +35,12 @@
         cd = "z";
         ls = "${lib.getExe pkgs.eza} -l";
         sysupdate = "sudo nixos-rebuild switch --flake /home/snow/nixos-dotfiles";
-        nvim = "${lib.getExe self'.packages.nvim}";
+        vim = "${lib.getExe self'.packages.nvim}";
       };
       zshrc.content = ''
         HISTFILE="$HOME/.zsh_history"
         setopt HIST_IGNORE_ALL_DUPS
+        eval "$(devenv hook zsh)"
       '';
     };
   };

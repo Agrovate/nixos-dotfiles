@@ -246,11 +246,11 @@
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1789188564,
-        "narHash": "sha256-ePtW04MNifKZd7owLvi51pMX5Cbco+nXPj1BFF4QQMA=",
+        "lastModified": 1789204344,
+        "narHash": "sha256-ENpLRIJE6WvI6Jc3+cEYBslbkncXtJ9S2fMvyGk0Sqo=",
         "owner": "Agrovate",
         "repo": "nvim",
-        "rev": "c8f58573ffc546ada50519d6061b659bff1dd441",
+        "rev": "cc9cc7625b86eb49e42568561a25a00147d8b7bb",
         "type": "github"
       },
       "original": {
