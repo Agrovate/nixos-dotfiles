@@ -34,7 +34,7 @@
       zshAliases = {
         cd = "z";
         ls = "${lib.getExe pkgs.eza} -l";
-        sysupdate = "sudo nixos-rebuild switch --flake /home/snow/nixos-dotfiles";
+        sysupdate = "sudo nixos-rebuild switch --flake /home/snow/nixoscfg";
         vim = "${lib.getExe self'.packages.nvim}";
       };
       zshrc.content = ''
