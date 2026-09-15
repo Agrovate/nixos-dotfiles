@@ -3,17 +3,13 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.niri = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.niri = {pkgs, ...}: {
     programs.niri = {
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
     };
     services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
-    environment.systemPackages = with pkgs; [awww];
+    environment.systemPackages = with pkgs; [awww xwayland-satellite];
   };
   perSystem = {
     pkgs,
