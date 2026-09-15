@@ -1,14 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.sh1t3rs = {
-    pkgs,
-    lib,
-    ...
-  }: {
-    networking.hostName = "SH1T3RS";
+{inputs, ...}: {
+  flake.nixosModules.mrvirt = {pkgs, ...}: {
+    networking.hostName = "MRVIRT";
 
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
@@ -16,7 +8,6 @@
 
     environment.systemPackages = with pkgs; [
       alacritty
-      asusctl
 
       inputs.zen-browser.packages.x86_64-linux.default
       inputs.swiss.packages.x86_64-linux.default

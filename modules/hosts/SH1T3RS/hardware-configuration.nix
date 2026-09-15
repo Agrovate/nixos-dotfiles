@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.sh1t3rsMachineHardware = {
+  flake.nixosModules.sh1t3rsHardware = {
     config,
     lib,
     modulesPath,

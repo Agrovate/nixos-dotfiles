@@ -31,6 +31,7 @@
   }: {
     packages.myZsh = inputs.wrapper-modules.wrappers.zsh.wrap {
       inherit pkgs;
+      runtimePkgs = [pkgs.fetch];
       zshAliases = {
         cd = "z";
         ls = "${lib.getExe pkgs.eza} -l";

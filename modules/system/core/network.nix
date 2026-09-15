@@ -19,16 +19,8 @@
   };
 }
 */
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.network = {
-    pkgs,
-    lib,
-    ...
-  }: {
+{...}: {
+  flake.nixosModules.network = {...}: {
     networking = {
       networkmanager = {
         enable = true;

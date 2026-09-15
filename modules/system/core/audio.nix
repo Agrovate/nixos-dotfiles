@@ -1,5 +1,5 @@
-{self,inputs,...}: {
-  flake.nixosModules.audio = {pkgs,lib,...}: {
+{...}: {
+  flake.nixosModules.audio = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       playerctl
       pavucontrol
@@ -19,5 +19,3 @@
     };
   };
 }
-
-

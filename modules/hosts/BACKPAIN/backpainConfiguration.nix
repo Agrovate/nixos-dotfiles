@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.backpainConfiguration = {pkgs, ...}: {
+  flake.nixosModules.backpain = {pkgs, ...}: {
     networking.hostName = "BACKPAIN";
 
     xdg.portal.enable = true;

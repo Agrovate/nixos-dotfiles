@@ -9,8 +9,6 @@
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
-    ez-configs.url = "github:ehllie/ez-configs";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
